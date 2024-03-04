@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true, //关闭ts类型检查
+    // "noImplicitAny": true,
+    // "noImplicitThis": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    // 解析非相对模块的基础地址，默认是当前目录
+    "baseUrl": "./",
+    // 路径映射，相对于baseUrl
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  //如果tsconfig.json中不存在“files”或“include”属性，则编译器默认将包含包含目录和子目录中的所有文件，但“exclude”指定的文件除外
+
+  // 希望被编译的ts文件所在目录
+  "include": ["src", "electron"],
+  // 不希望被编译的目录
+  "exclude": ["node_modules", "bower_components", "jspm_packages"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
